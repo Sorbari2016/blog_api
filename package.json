@@ -1,0 +1,15 @@
+{
+  "name": "blog_api",
+  "version": "1.0.0",
+  "description": "Blog API is a simple blog web app with an API-only backend, and two different frontends used in accessing, editing, & publishing blog posts. The aim of this project is to help me - Build APIs, - Add security features when buidling APIs  - Set up seperate websites for frontend and backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Clematins Nwiibee",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^18.0.8"
+  }
+}
