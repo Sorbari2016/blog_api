@@ -5,8 +5,99 @@ generator client {
 
 
 datasource db {
-  provider = "postgresql",
+  provider = "postgresql"
 }
 
 
 // Models
+
+enum Role {
+  USER
+  AUTHOR
+  ADMIN
+}
+
+model User {
+  id Int @id @default(autoincrement())
+  username String @unique
+  email String @unique
+  password String 
+  role Role @default(USER)   // default role assigned on creation
+  createdAt DateTime  @default(now()) 
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime? 
+
+  posts Post[]
+  comments Comment[]
+
+  @@index([deletedAt])
+  @@map("users")
+}
+
+
+model Post {
+  id Int @id @default(autoincrement())
+  title String
+  content String
+  published Boolean @default(false)
+
+  authorId Int
+  author User @relation(fields:[authorId], references:[id], onDelete: Cascade)
+
+  categoryId Int
+  category Category @relation(fields:[categoryId], references:[id])
+
+  createdAt DateTime  @default(now()) 
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  comments Comment[]
+
+  @@index([authorId, deletedAt])
+  @@index([categoryId, deletedAt])
+  @@index([deletedAt])
+
+  @@map("posts")
+}
+
+
+model Comment {
+  id Int @id @default(autoincrement())
+  content String
+
+  userId Int
+  user User @relation(fields:[userId], references:[id], onDelete: Cascade)
+
+  postId Int
+  post Post @relation(fields:[postId], references:[id], onDelete: Cascade)
+
+  createdAt DateTime  @default(now()) 
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime? 
+
+  @@index([postId, deletedAt])
+  @@index([userId, deletedAt])
+  @@index([deletedAt])
+
+  @@map("comments")
+}
+
+
+model Category {
+  id Int @id @default(autoincrement())
+  name String @unique
+
+  posts Post[]
+  @@map("categories")
+}
+
+
+model Session {
+  id        String   @id
+  sid       String   @unique
+  data      String  
+  expiresAt   DateTime
+
+  @@index([expiresAt]) 
+  @@map("sessions")
+}
