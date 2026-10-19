@@ -3,6 +3,7 @@ import express from "express";
 import dotenv from "dotenv";
 import { prisma } from "./lib/prisma.js";
 import cors from "cors";
+import authRouter from "./routes/authRoute.js";
 
 // Configure dotenv
 dotenv.config();
@@ -15,10 +16,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
-// test route
-app.get("/", (req, res) => {
-  res.json("Testing the api server!");
-});
+// Routes
+app.use("/api", authRouter);
 
 // Error middleware
 app.use((err, req, res, next) => {
