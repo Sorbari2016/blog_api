@@ -45,7 +45,7 @@ model Post {
   author User @relation(fields:[authorId], references:[id], onDelete: Cascade)
 
   categoryId Int
-  category Category @relation(fields:[categoryId], references:[id])
+  category Category @relation(fields:[categoryId], references:[id], onDelete: Cascade)
 
   createdAt DateTime  @default(now()) 
   updatedAt DateTime  @updatedAt
