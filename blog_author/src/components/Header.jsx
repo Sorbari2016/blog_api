@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import clareLogo from "../assets/images/logo-clare.png";
+import clareLogo from "../assets/images/logo-clare-navy.png";
 import searchIcon from "../assets/icons/search-icon.png";
 
 const Header = () => {
@@ -8,13 +8,13 @@ const Header = () => {
       <nav>
         <ul className="header-nav">
           <li>
-            <Link to={"/"} className="logo-link">
+            <Link to={"/"} className="logo-link flex-item">
               <img src={clareLogo} alt="Clare's blog logo" />
               Clare's Blog
             </Link>
           </li>
           <li>
-            <span className="searchtab">
+            <span className="searchtab flex-item">
               <img src={searchIcon} alt="search icon" className="icon" />
               <input
                 type="text"
@@ -25,10 +25,10 @@ const Header = () => {
             </span>
           </li>
           <span className="auth-btns">
-            <Link to={"/login"} className="btn-login">
+            <Link to={"/login"} className="btn btn-login">
               Login
             </Link>
-            <Link to={"/signup"} className="btn-signup">
+            <Link to={"/signup"} className="btn btn-signup">
               Signup
             </Link>
           </span>

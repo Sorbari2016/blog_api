@@ -7,12 +7,88 @@
   padding: 0;
 }
 
+/* Variables */
+:root {
+  --bg-body: #071b2b;
+  --bg-surface: #167d8d;
+  --danger: #e05c5c;
+  --text-primary: #e8e8e8;
+  --text-secondary: #b0b0b0;
+  --bg-card: #167d8d;
+  --bg-hover: #eeeeee;
+  --radius: 8px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --border: #444444;
+  --accent: #6b8cff;
+  --accent-hover: #b9e4e8;
+  --text-muted: #888888;
+}
+
+/* Icons */
 .icon {
   width: 24px;
   height: 24px;
 }
 
+/* Logo image */
 .logo-link img {
   width: 32px;
   height: 32px;
+  object-fit: contain;
+}
+
+/* Parent element */
+html {
+  font-size: 16px;
+}
+
+/* Overall body */
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Lists */
+ul {
+  list-style: none;
+}
+
+/* Buttons */
+button {
+  font: inherit;
+  cursor: pointer;
+  background: none;
+  color: inherit;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.flex-item,
+.nav-link,
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex-center {
+  justify-content: center;
 }

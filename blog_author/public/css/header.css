@@ -1,0 +1,107 @@
+/* HEADER */
+
+/* Main header container */
+#main-header {
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Nav Link */
+#main-header nav ul.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+/* Logo link */
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--text-primary);
+}
+
+.logo-link:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+.searchtab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-body);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  min-width: 260px;
+}
+
+.searchtab img {
+  width: 18px;
+  height: 18px;
+  opacity: 0.7;
+}
+
+.searchtab input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+.searchtab input::placeholder {
+  color: var(--text-muted);
+}
+
+.auth-btns {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.auth-btns .btn {
+  padding: 0.45rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.15s ease;
+}
+
+.auth-btns .btn:first-child {
+  background-color: transparent;
+  border: 1px solid var(--bg-body);
+}
+
+.auth-btns .btn:last-child {
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+}
+
+.auth-btns .btn:last-child:hover,
+.auth-btns .btn:first-child:hover {
+  font-weight: 600;
+  background-color: var(--accent-hover);
+  color: var(--bg-body);
+}
+
+@media (max-width: 640px) {
+  #main-header nav ul.header-nav {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .searchtab {
+    order: 3;
+    width: 100%;
+    min-width: unset;
+  }
+}
