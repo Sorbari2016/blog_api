@@ -4,7 +4,7 @@ import searchIcon from "../assets/icons/search-icon.png";
 
 const Header = () => {
   return (
-    <header className="main-header">
+    <header id="main-header">
       <nav>
         <ul className="header-nav">
           <li>
