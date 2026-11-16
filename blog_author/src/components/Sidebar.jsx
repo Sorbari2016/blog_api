@@ -47,9 +47,9 @@ const Sidebar = () => {
         </ul>
       </nav>
       <div className="sidebar-cta">
-        <Link to={"posts"} className="btn btn-create">
-          Create
-        </Link>
+        <button className="btn btn-create" type="button">
+          <Link to={"posts"}>Create</Link>
+        </button>
       </div>
     </aside>
   );
