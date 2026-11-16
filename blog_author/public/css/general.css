@@ -1,0 +1,18 @@
+/* Resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.logo-link img {
+  width: 32px;
+  height: 32px;
+}
